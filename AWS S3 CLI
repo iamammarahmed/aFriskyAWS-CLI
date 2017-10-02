@@ -1,0 +1,23 @@
+# Creating New S3 Bucket
+aws s3 mb s3://<bucket-name>/
+
+# Deleting Old Bucket
+aws s3 rb s3://<bucket-name>
+
+
+# Listing S3 Buckets
+aws s3 ls
+
+# Listing file in S3 Buckets
+aws s3 ls s3://<bucket-name>
+
+
+# Synchronizing Directory with S3 Bucket
+aws s3 sync /path/to/directory s3://<bucket-name>/
+
+# Deleting Object from S3 Bucket while synchronization
+aws s3 sync /path/to/directory s3://<bucket-name>/ --delete
+
+# Deleting S3 object directly from bucket
+aws s3 rm s3://<bucket-name>/<file-name>
+aws s3 sync s3://<bucket-name> /path/to/directory --delete
